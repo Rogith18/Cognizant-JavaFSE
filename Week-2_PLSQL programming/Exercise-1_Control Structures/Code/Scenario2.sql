@@ -1,0 +1,13 @@
+DROP PROCEDURE IF EXISTS PromoteToVIP;
+
+DELIMITER //
+
+CREATE PROCEDURE PromoteToVIP()
+BEGIN
+    UPDATE customers
+    SET is_vip = TRUE
+    WHERE balance > 10000;
+END;
+//
+
+DELIMITER ;
